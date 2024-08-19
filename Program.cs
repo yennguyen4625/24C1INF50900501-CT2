@@ -1,154 +1,61 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Section01
+﻿internal class Program
 {
-    internal class Program
+    private static void Main(string[] args)
     {
-        static void Main(string[] args)
-        { //baitap_01();
-          //baitap_02();
-          //baitap_03();
-          //baitap_04();
-          //baitap_05();
-          //baitap_06();
-          //baitap_07();
-          //baitap_08();
-          //baitap_09();
-          //baitap_10();
-        }
+        //baitap_01();
+        //baitap_02();
+        //baitap_03();
+        vidu_01();
+    }
+    static void baitap_01()
+    { 
+        Console.Write("Enter a number as Celsius: ");
+        float celsius = Convert.ToSingle(Console.ReadLine());
+        float kelvin = celsius + 273;
+        float fahrenheit = celsius * 18 / 10 + 32;
 
-        static void baitap_01()
-            {
-                Console.Write("Enter first number: ");
-                int number_1 = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Enter second number: ");
-                int number_2 = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("{0} in C = {1} in K", celsius, kelvin);
+        Console.WriteLine("{0} in C = {1} in F", celsius, fahrenheit);
+        Console.ReadLine();
+    }
+    static void baitap_02()
+    {
+        double PI = Math.PI;
+        Console.Write("Enter radius of the sphere: ");
+        float radius = Convert.ToSingle(Console.ReadLine());
+        double surface = 4 * PI * Math.Pow(radius, 2);
+        double volume = 4 /3 * PI * Math.Pow(radius, 3);
 
-                int sum = number_1 + number_2;
+        Console.WriteLine("{0} in R = {1} in S", radius, surface);
+        Console.WriteLine("{0} in C = {1} in V", radius, volume);
+        Console.ReadLine();
+    }
+    static void baitap_03()
+    {
+        Console.Write("Enter 1st number: ");
+        int number_1 = Convert.ToInt32(Console.ReadLine());
+        Console.Write("Enter 2nd number: ");
+        int number_2 = Convert.ToInt32(Console.ReadLine());
 
-                Console.WriteLine("number_1 + number_2 = " + sum);
-                Console.ReadKey();
-            }
-            static void baitap_02()
-            {
-                Console.Write("Enter a: ");
-                int a = Convert.ToInt32(Console.ReadLine());
-                Console.Write("Enter b: ");
-                int b = Convert.ToInt32(Console.ReadLine());
-                a = a + b;
-                b = a - b;
-                a = a - b;
+        int adding = number_1 + number_2;
+        int substracting = number_1 - number_2;
+        int multiply = number_1 * number_2;
+        int dividing = number_1 / number_2;
+        int remanding = number_1 % number_2;
 
-                Console.WriteLine("After swapping");
-                Console.WriteLine("New value of a is : " + a);
-                Console.WriteLine("New value of b is : " + b);
-                Console.ReadLine();
-            static void baitap_03()
-            {
-                Console.WriteLine("Enter 1st number:");
-                double number_1 = Convert.ToSingle(Console.ReadLine());
-                Console.WriteLine("Enter 1st number:");
-                double number_2 = Convert.ToSingle(Console.ReadLine());
-
-                double multiply = number_1 * number_2;
-
-                Console.WriteLine("number_1 * number_2 = " + multiply);
-                Console.ReadLine();
-            }
-            static void baitap_04()
-            {
-                double feet, meter;
-                //feet to meter;
-                Console.WriteLine("Enter feet: ");
-
-                feet = Convert.ToDouble(Console.ReadLine());
-                meter = feet / 3.2808399;
-                Console.WriteLine("To meter =" + meter);
-                Console.ReadLine();
-            }
-                static void baitap_05()
-                {
-                    double celsius, fahrenheit;
-                    // Celsius to Fahrenheit;
-                    Console.WriteLine("Enter Celcius=");
-                    celsius = Convert.ToDouble(Console.ReadLine());
-                    fahrenheit = (celsius * 9 / 5) + 32;
-                    Console.WriteLine($"To fahrenheit =" + fahrenheit);
-
-                    // Fahrenheit to Celsius;
-                    Console.WriteLine("Enter Fahrenheit=");
-                    fahrenheit = Convert.ToDouble(Console.ReadLine());
-                    celsius = (fahrenheit - 32) * 5 / 9;
-                    Console.WriteLine($"To celsius =" + celsius);
-                }
-                static void baitap_06()
-                {
-                    Console.WriteLine("Size of byte: " + sizeof(byte) + "byte");
-                    Console.WriteLine("Size of sbyte: " + sizeof(sbyte) + "sbyte");
-                    Console.WriteLine("Size of short: " + sizeof(short) + "short");
-                    Console.WriteLine("Size of ushort: " + sizeof(ushort) + "ushort");
-
-                    Console.WriteLine("Size of int: " + sizeof(int) + "int");
-                    Console.WriteLine("Size of uint: " + sizeof(uint) + "uint");
-                    Console.WriteLine("Size of long: " + sizeof(long) + "long");
-                    Console.WriteLine("Size of ulong: " + sizeof(ulong) + "ulong");
-
-                    Console.WriteLine("Size of float: " + sizeof(float) + "float");
-                    Console.WriteLine("Size of double: " + sizeof(double) + "double");
-                    Console.WriteLine("Size of decimal: " + sizeof(decimal) + "decimal");
-                    Console.WriteLine("Size of bool: " + sizeof(bool) + "bool");
-
-                    Console.WriteLine("Size of char: " + sizeof(char) + "char");
-                    Console.ReadKey();
-                }
-                static void baitap_07()
-                {
-                    //Read character;
-                    Console.Write("Enter a character: ");
-                    char character = Console.ReadKey().KeyChar;
-                    //Print number of this char;
-                    int ASCIIValue = Convert.ToInt32(character);
-                    Console.WriteLine($"The ASCII value of " + character + " is: " + ASCIIValue);
-                }
-                static void baitap_08()
-                {
-                    double R, S;
-                    double PI = Math.PI;
-                    Console.WriteLine("Enter the length of side R:");
-                    R = Convert.ToDouble(Console.ReadLine());
-                    S = R * R * Math.PI;
-                    Console.WriteLine($"Area of Square =" + S);
-                    Console.ReadLine();
-                }
-                static void baitap_09()
-                {
-                    double a, S;
-                    Console.WriteLine("Enter the length of side a:");
-                    a = Convert.ToDouble(Console.ReadLine());
-                    S = a * a;
-                    Console.WriteLine($"Area of Square =" + S);
-                    Console.ReadLine();
-                }
-                static void baitap_10()
-                {
-                    int totalDays, years, weeks, days; //Convert days to years, weeks and days;
-                    Console.Write("Enter totalDays:");
-                    totalDays = Convert.ToInt32(Console.ReadLine());
-                    years = totalDays / 365;
-                    weeks = (totalDays % 365) / 7;
-                    days = (totalDays % 365) % 7;
-
-                    Console.WriteLine("Years" + years);
-                    Console.WriteLine("Weeks" + weeks);
-                    Console.WriteLine("Days" + days);
-
-                    Console.ReadKey();
-                }
-            }
+        Console.WriteLine($"{number_1} + {number_2} = {adding}");
+        Console.WriteLine($"{number_1} - {number_2} = {substracting}");
+        Console.WriteLine($"{number_1} * {number_2} = {multiply}");
+        Console.WriteLine($"{number_1} / {number_2} = {dividing}");
+        Console.WriteLine($"{number_1} % {number_2} = {remanding}");
+        Console.ReadLine();
+    }
+    static void vidu_01()
+    {
+        int a = 5, b = 6;
+        Console.WriteLine("a={0}, b={1}", a, b);
+        Console.WriteLine($"a={a}, b={b}");
+        Console.WriteLine("""Mama said: "hello" """);
+        Console.ReadLine();
     }
 }
- 
