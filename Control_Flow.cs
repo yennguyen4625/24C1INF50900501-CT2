@@ -115,8 +115,8 @@
             sum += number;
         }
         double average = sum / count;
-        Console.WriteLine("Sum of 10 numbers is {sum}");
-        Console.WriteLine("The average of 10 number is {average}");
+        Console.WriteLine($"Sum of 10 numbers is {sum}");
+        Console.WriteLine($"The average of 10 number is {average}");
         Console.ReadLine() ;
     }
     static void baitap_06()
