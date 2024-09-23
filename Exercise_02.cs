@@ -1,61 +1,135 @@
-﻿internal class Program
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
 {
-    private static void Main(string[] args)
-    {
-        //baitap_01();
-        //baitap_02();
-        //baitap_03();
-        vidu_01();
-    }
-    static void baitap_01()
-    { 
-        Console.Write("Enter a number as Celsius: ");
-        float celsius = Convert.ToSingle(Console.ReadLine());
-        float kelvin = celsius + 273;
-        float fahrenheit = celsius * 18 / 10 + 32;
+    /*
+     Create a Jagged Array with random integer numbers (or by user input) by getting 
+        the number of rows and columns from the user and printing the data in the array to the user. 
+    Then, create functions to implement following tasks:
+        Print the biggest number of each row and the largest number of the whole array.
+        Sort values ascending of each row.
+        Print items of the array that are prime.
+        Search and print all positions of a number (enter from the user).
 
-        Console.WriteLine("{0} in C = {1} in K", celsius, kelvin);
-        Console.WriteLine("{0} in C = {1} in F", celsius, fahrenheit);
-        Console.ReadLine();
-    }
-    static void baitap_02()
+     */
+    internal class Exercise_02
     {
-        double PI = Math.PI;
-        Console.Write("Enter radius of the sphere: ");
-        float radius = Convert.ToSingle(Console.ReadLine());
-        double surface = 4 * PI * Math.Pow(radius, 2);
-        double volume = 4 /3 * PI * Math.Pow(radius, 3);
+        /// <summary>
+        /// Create a Jagged Array with random integer numbers (or by user input) by getting 
+        ///the number of rows and columns from the user
+        /// </summary>
+        /// <param name="a"></param>
+        static void init_random(int[][] a, int rows)
+        {
+            Random rnd = new Random();
+            
+            for (int i = 0; i < rows; i++)
+            {
+                Console.WriteLine($"Enter the No columns of the row {i}th: ");
+                int cols = int.Parse(Console.ReadLine());
+                a[i] = new int[cols];
+                for (int j = 0; j < cols; j++)
+                    a[i][j] =rnd.Next(10, 50);
+            }
+        }
+        static void init_from_user(int[][] a)
+        {
 
-        Console.WriteLine("{0} in R = {1} in S", radius, surface);
-        Console.WriteLine("{0} in C = {1} in V", radius, volume);
-        Console.ReadLine();
-    }
-    static void baitap_03()
-    {
-        Console.Write("Enter 1st number: ");
-        int number_1 = Convert.ToInt32(Console.ReadLine());
-        Console.Write("Enter 2nd number: ");
-        int number_2 = Convert.ToInt32(Console.ReadLine());
+        }
 
-        int adding = number_1 + number_2;
-        int substracting = number_1 - number_2;
-        int multiply = number_1 * number_2;
-        int dividing = number_1 / number_2;
-        int remanding = number_1 % number_2;
+        /// <summary>
+        /// printing the data in the array to the user
+        /// </summary>
+        /// <param name="a"></param>
 
-        Console.WriteLine($"{number_1} + {number_2} = {adding}");
-        Console.WriteLine($"{number_1} - {number_2} = {substracting}");
-        Console.WriteLine($"{number_1} * {number_2} = {multiply}");
-        Console.WriteLine($"{number_1} / {number_2} = {dividing}");
-        Console.WriteLine($"{number_1} % {number_2} = {remanding}");
-        Console.ReadLine();
-    }
-    static void vidu_01()
-    {
-        int a = 5, b = 6;
-        Console.WriteLine("a={0}, b={1}", a, b);
-        Console.WriteLine($"a={a}, b={b}");
-        Console.WriteLine("""Mama said: "hello" """);
-        Console.ReadLine();
+        static void print(int[][] a)
+        {
+            for (int i = 0; i < a.Length; i++)
+            {
+                for (int j = 0; j < a[i].Length; j++)
+                    Console.Write(a[i][j] + "\t");
+                Console.WriteLine();
+            }
+        }
+
+        static int max(int[][] a)
+        {
+
+            //....
+            return 0;
+        }
+        static void sort_rows(int[][] a)
+        {
+            //>?????
+        }
+
+        /// <summary>
+        /// Search and print all positions of a number (enter from the user).
+        /// </summary>
+        /// <param name="a"></param>
+        /// <param name="val"></param>
+        static void search_and_print(int[][] a, int val)
+        {
+
+        }
+
+        /// <summary>
+        ///  Print items of the array that are prime.
+        /// </summary>
+        /// <param name="a"></param>
+        static void print_primes(int[][] a)
+        {
+            //????
+        }
+
+
+        static int menu()
+        {
+            Console.WriteLine("\t\tjagged array demo\n");
+            Console.WriteLine("1. Jagged array init");
+            Console.WriteLine("2. print array");
+            Console.WriteLine("3...");
+            Console.WriteLine("4....");
+            Console.WriteLine("5....");
+            Console.WriteLine("6....");
+            Console.WriteLine("0. exit");
+            Console.WriteLine();
+            Console.Write("Your select <1..6>");
+            int sel = 0;
+            while (true)
+            {
+                bool c = int.TryParse(Console.ReadLine(), out sel);
+                if (c && sel >= 0 && sel <= 6)
+                    break;
+                else Console.WriteLine("Please enter a valid choice!");
+            }
+            return sel;
+        }
+
+
+        public static void Main(string[] args)
+        {
+            Console.Write("ENter the no rows: ");
+            int rows = int.Parse(Console.ReadLine());
+            int[][] a = new int[rows][];
+            //init_random(a,rows);
+            //print(a);
+            while(true)
+            {
+                int sel = menu();
+                switch (sel)
+                {
+                    case 0: Console.WriteLine("Bye"); return;
+                    case 1: init_random(a, rows); break;
+                    case 2: print(a); break;
+                        //...
+                }
+            }
+            
+        }
     }
 }
