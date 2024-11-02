@@ -12,13 +12,13 @@ namespace Exercise
 
         static void Main(string[] args)
         {
-            //BT01a();// Max cua 3 so
-            //BT01b();// Max cua n so va co it nhat 1 so
-            //BT02();// Giai thua 1 so nguyen duong
-            //BT03();// Kiem tra so nguyen to
-            //BT04();// Tat ca so nguyen to nho hon n,so nguyen to dau tien
-            //BT05();// So hoan hao
-            BT06();//
+            //BT01a();
+            //BT01b();
+            //BT02();
+            //BT03();
+            //BT04();
+            //BT05();
+            BT06();
         }
 
         static void BT01a()
